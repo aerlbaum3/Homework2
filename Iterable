@@ -1,0 +1,36 @@
+import java.util.Iterator;
+	import java.lang.Iterable;
+
+	class MyArray implements Iterable<String> {
+	    private String[] arr;
+
+	    public MyArray(String[] arr) {
+	        this.arr = arr;
+	    }
+
+	    @Override
+	    public Iterator<String> iterator() {
+	        return new MyIterator();
+	    }
+
+		//nested class 
+	    private class MyIterator implements Iterator<String> {
+	        private int index = 0;
+
+	        @Override
+	        public boolean hasNext() {
+	            return index < arr.length;
+	        }
+
+	        @Override
+	        public String next() {
+	            if (!hasNext()) {
+	                throw new java.util.NoSuchElementException();
+	            }
+	            return arr[index++];
+	        }
+	    }
+	}
+
+
+
