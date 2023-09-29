@@ -1,0 +1,12 @@
+public class IteratorImplementationExample{
+	    public static void main(String[] args) {
+	        String[] names = {"Mickey", "Minnie" ,"Donald" , "Goofy" , "Tweety","Dafney" ,"Elmo", "Big Bird","Bert"};
+	        MyArray characters = new MyArray(names);
+
+	        // Using the iterator to loop through the array
+	        System.out.println("Mickey Mouse and Sesame Street:");
+	        for (String name : characters) {
+	            System.out.println(name);
+	        }
+	    }
+	}
